@@ -64,7 +64,8 @@ export class FormularioComponent implements OnInit {
     console.log(this.formulario);
     this.flag = true;
 
-  }
+  });
 
   }
+}
 
