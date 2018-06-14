@@ -1,4 +1,4 @@
-<div class="container container-border">
+<div *ngIf="!flag" class="container container-border">
     <h2 class="">I. PERFIL DEL EGRESADO</h2>
     <br>
 
@@ -162,16 +162,16 @@
         <div class="form-row">
             <div class="col-md-12">*Dominio de idioma extranjero</div>
             <div class="form-group col-md-4">
-                <label for="egreso">*Inglés</label>
-                <input type="number" min="0" max="100" class="form-control" id="ingles" formControlName="egreso" placeholder="%">
+                <label for="ingles">*Inglés</label>
+                <input type="number" min="0" max="100" class="form-control" id="ingles" formControlName="ingles" placeholder="%">
             </div>
             <div class="form-group col-md-4">
-                <label for="egreso">Otro</label>
-                <input type="text" class="form-control" id="idioma_nombre" formControlName="egreso" placeholder="Ej. Francés">
+                <label for="idioma_nombre">Otro</label>
+                <input type="text" class="form-control" id="idioma_nombre" formControlName="idioma_nombre" placeholder="Ej. Francés">
             </div>
             <div class="form-group col-md-4">
-                <label for="egreso">Porcentaje</label>
-                <input type="number" min="0" max="100" class="form-control" id="idioma_porcentaje" formControlName="egreso" placeholder="%">
+                <label for="idioma_porcentaje">Porcentaje</label>
+                <input type="number" min="0" max="100" class="form-control" id="idioma_porcentaje" formControlName="idioma_porcentaje" placeholder="%">
             </div>
 
         </div>
@@ -179,11 +179,11 @@
 
             <div class="form-group col-md-12">
                 <label for="softwares">Manejo de paquetes computacionales(separa cada paquete por una ",")</label>
-                <textarea class="form-control" rows="5" maxlength="255" id="software"></textarea>
+                <textarea class="form-control" rows="5" maxlength="255" formControlName="softwares" id="softwares"></textarea>
             </div>
         </div>
         <h2 class="">II. PERTINENCIA Y DISPONIBILIDAD DE MEDIOS Y RECURSOS PARA EL APRENDIZAJE</h2>
-        <p>Califique la calidad de la educación profesional proporcionada por el personal docente,así como el Plan de Estudios de la carrera que cursó y las condiciones del plantel en cuanto a infraestructura</p>
+        <p class="text-justify">Califique la calidad de la educación profesional proporcionada por el personal docente,así como el Plan de Estudios de la carrera que cursó y las condiciones del plantel en cuanto a infraestructura</p>
         <div class="form-group col-md-12">
             <label class="mr-sm-2" for="docentes">II1. Calidad de los docentes</label>
             <select class="custom-select mr-sm-2" id="docentes" formControlName="docentes">
@@ -245,6 +245,16 @@
                             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block">Guardar datos</button>
+        <button type="submit" class="btn btn-success btn-block">Guardar datos</button>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+<div *ngIf="flag" class="container  text-center container-border">
+    <h2 class="">¡Gracias por llenar la encuesta!</h2>
+    <br>
+
 </div>

@@ -13,6 +13,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class FormularioComponent implements OnInit {
   public perfil: FormGroup;
   public formulario: Formulario;
+  public flag: boolean;
   constructor(private formBuilder: FormBuilder,  private afDB: AngularFireDatabase) {
     this.perfil = this.formBuilder.group({
     nombre: ['', Validators.compose([Validators.required])],
@@ -58,8 +59,11 @@ export class FormularioComponent implements OnInit {
 
   main_calcular() {
     this.formulario = this.perfil.value;
+    console.log(this.formulario);
     this.afDB.list(`/Posts/`).push(this.formulario).then(()=>{
     console.log(this.formulario);
+    this.flag = true;
+
   }
 
   }
