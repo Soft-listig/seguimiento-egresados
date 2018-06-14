@@ -1,0 +1,250 @@
+<div class="container container-border">
+    <h2 class="">I. PERFIL DEL EGRESADO</h2>
+    <br>
+
+    <form [formGroup]="perfil" (ngSubmit)="main_calcular()">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="paterno">*Apellido paterno</label>
+                <input type="text" class="form-control" id="paterno" formControlName="paterno" placeholder="Pérez" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="materno">*Apellido materno</label>
+                <input type="text" class="form-control" id="materno" formControlName="materno" placeholder="Sanchez" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="nombre">*Nombre(s)</label>
+                <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Juan José" required>
+            </div>
+            <!-- <div class="form-group col-md-3">
+                <label for="folio">Folio</label>
+                <input type="text" class="form-control" id="folio" value="288" readonly>
+            </div> -->
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="inputAddress">*Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="nacimiento" formControlName="nacimiento" placeholder="">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="curp">*Curp</label>
+                <input type="text" maxlength="19" class="form-control" id="curp" formControlName="curp" placeholder="">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="matricula">*Matricula</label>
+                <input type="number" min="0" class="form-control" id="matricula" formControlName="matricula" placeholder="12014879">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label class="mr-sm-2" for="sexo">*Sexo</label>
+                <select class="custom-select mr-sm-2" id="sexo" formControlName="sexo">
+                  <option selected>Elige una opción...</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+                 
+                </select>
+            </div>
+            <div class="form-group col-md-8">
+
+                <label class="mr-sm-2" for="estado_civil">Estado civil</label>
+                <select class="custom-select mr-sm-2" id="estado_civil" formControlName="estado_civil">
+                <option selected>Elige una opción...</option>
+                  <option value="soltero">Soltero(a)</option>
+                  <option value="casado">Casado(a)</option>
+                  <option value="otro">Otro</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="Calle">*Dirección</label>
+                <input type="text" class="form-control" id="Calle" formControlName="calle" placeholder="Calle">
+
+            </div>
+            <div class="form-group col-md-3">
+                <label for="num_interior">*Número interior </label>
+                <input type="number" min="0" class="form-control" id="num_interior" formControlName="num_interior" placeholder="No.">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="Colonia">*Colonia </label>
+                <input type="text" class="form-control" id="Colonia" formControlName="colonia" placeholder="Colonia">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="cp">*Código Postal </label>
+                <input type="number" min="0" max="99999" class="form-control" id="cp" formControlName="cp" placeholder="C.P.">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="Ciudad">*Ciudad</label>
+                <input type="text" class="form-control" id="Ciudad" formControlName="ciudad" placeholder="Ciudad">
+
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Municipio">*Municipio</label>
+                <input type="text" class="form-control" id="Municipio" formControlName="municipio" placeholder="Municipio">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="Estado">*Estado</label>
+                <input type="text" class="form-control" id="Estado" formControlName="estado" placeholder="Estado">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="tel">*Tel. fijo</label>
+                <input type="number" min="0" max="9999999" class="form-control" formControlName="tel" id="tel">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="celular">*Celular</label>
+                <input type="number" class="form-control" min="0" max="9999999999" formControlName="celular" id="celular">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="tel">Tel. casa paterna</label>
+                <input type="number" class="form-control" min="0" max="9999999" formControlName="tel_paterno" id="tel_paterno">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="tel">Facebook</label>
+                <input type="text" class="form-control" formControlName="facebook" id="facebook">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="celular">Twitter</label>
+                <input type="text" class="form-control" formControlName="twitter" id="twitter">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">*E-mail</label>
+                <input type="email" class="form-control" formControlName="email" id="email" formControlName="email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="mr-sm-2" for="carrera">*Carrera de egreso</label>
+                <select class="custom-select mr-sm-2" id="carrera" formControlName="carrera">
+                        <option selected>Elige una carrera...</option>
+                          <option value="industrial">Licenciatura en Ingeniería Industrial</option>
+                          <option value="bioquimica">Licenciatura en Ingeniería Bioquímica</option>
+                          <option value="biomedica">Licenciatura en Ingeniería Biomédica</option>
+                          <option value="gestion">Licenciatura en Ingeniería en Gestión Empresarial</option>
+                          <option value="quimica">Licenciatura en Ingeniería Química</option>
+                          <option value="electrica">Licenciatura en Ingeniería Eléctrica</option>
+                          <option value="electronica">Licenciatura en Ingeniería Electrónica</option>
+                          <option value="mecanica">Licenciatura en Ingeniería Mecánica</option>
+                          <option value="civil">Licenciatura en Ingeniería Civil</option>
+                          <option value="sistemas">Licenciatura en Sistemas Computacionales</option>
+                          <option value="administracion">Licenciatura en Administración</option>
+                          <option value="administracion_distancia">Licenciatura en Administración en Educación a Distancia</option>
+                        </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="egreso">*Especialidad</label>
+                <input type="text" class="form-control" id="ingles" formControlName="especialidad" placeholder="">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="egreso">*Fecha de egreso</label>
+                <input type="date" class="form-control" id="egreso" formControlName="egreso" placeholder="">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="mr-sm-2" for="titulado">*Titulado</label>
+                <select class="custom-select mr-sm-2" id="titulado" formControlName="titulado">
+                                <option selected value="no">No</option>
+                                  <option value="si">Si</option>
+                                  
+                                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">*Dominio de idioma extranjero</div>
+            <div class="form-group col-md-4">
+                <label for="egreso">*Inglés</label>
+                <input type="number" min="0" max="100" class="form-control" id="ingles" formControlName="egreso" placeholder="%">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="egreso">Otro</label>
+                <input type="text" class="form-control" id="idioma_nombre" formControlName="egreso" placeholder="Ej. Francés">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="egreso">Porcentaje</label>
+                <input type="number" min="0" max="100" class="form-control" id="idioma_porcentaje" formControlName="egreso" placeholder="%">
+            </div>
+
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-12">
+                <label for="softwares">Manejo de paquetes computacionales(separa cada paquete por una ",")</label>
+                <textarea class="form-control" rows="5" maxlength="255" id="software"></textarea>
+            </div>
+        </div>
+        <h2 class="">II. PERTINENCIA Y DISPONIBILIDAD DE MEDIOS Y RECURSOS PARA EL APRENDIZAJE</h2>
+        <p>Califique la calidad de la educación profesional proporcionada por el personal docente,así como el Plan de Estudios de la carrera que cursó y las condiciones del plantel en cuanto a infraestructura</p>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="docentes">II1. Calidad de los docentes</label>
+            <select class="custom-select mr-sm-2" id="docentes" formControlName="docentes">
+                                        <option selected value="">Selecciona una opción...</option>
+                                <option value="muy_buena">Muy buena</option>
+                                  <option value="buena">Buena</option>
+                                  <option value="regular">Regular</option>
+                                  <option value="mala">Mala</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="plan_estudios">II2. Plan de estudios</label>
+            <select class="custom-select mr-sm-2" id="plan_estudios" formControlName="plan_estudios">
+                                        <option selected value="">Selecciona una opción...</option>
+                                    <option value="muy_buena">Muy buena</option>
+                                      <option value="buena">Buena</option>
+                                      <option value="regular">Regular</option>
+                                      <option value="mala">Mala</option>
+                </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="investigacion_desarrollo">II3. Oportunidad de participar en proyectos de investigación y desarrollo</label>
+            <select class="custom-select mr-sm-2" id="investigacion_desarrollo" formControlName="investigacion_desarrollo">
+                                        <option selected value="">Selecciona una opción...</option>
+                                        <option value="muy_buena">Muy buena</option>
+                                          <option value="buena">Buena</option>
+                                          <option value="regular">Regular</option>
+                                          <option value="mala">Mala</option>
+                    </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="investigacion_enseñanza">II4. Énfasis que se le prestaba a la investigación dentro del proceso de enseñanza</label>
+            <select class="custom-select mr-sm-2" id="investigacion_enseñanza" formControlName="investigacion_enseñanza">
+                                        <option selected value="">Selecciona una opción...</option>
+                                            <option value="muy_buena">Muy buena</option>
+                                              <option value="buena">Buena</option>
+                                              <option value="regular">Regular</option>
+                                              <option value="mala">Mala</option>
+                        </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="infraestructura">II5. Satisfacción con las condiciones de estudio (infraestructura)</label>
+            <select class="custom-select mr-sm-2" id="infraestructura" formControlName="infraestructura">
+                                        <option selected value="">Selecciona una opción...</option>
+                                                <option value="muy_buena">Muy buena</option>
+                                                  <option value="buena">Buena</option>
+                                                  <option value="regular">Regular</option>
+                                                  <option value="mala">Mala</option>
+                            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label class="mr-sm-2" for="residencia">II6. Experiencia obtenida a través de la residencia profesional</label>
+            <select class="custom-select mr-sm-2" id="residencia" formControlName="residencia">
+                                        <option selected value="">Selecciona una opción...</option>
+                                                <option value="muy_buena">Muy buena</option>
+                                                <option value="buena">Buena</option>
+                                                <option value="regular">Regular</option>
+                                                <option value="mala">Mala</option>
+                            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Guardar datos</button>
+    </form>
+</div>
